@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta name="cinema-static" content="true" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bekeken — Cinema van Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="detail-nav">
+    <a href="index.html" class="back-link">← Terug naar home</a>
+    <a href="index.html" class="wordmark-small">Cinema van Dan</a>
+    <a href="awards.html" class="detail-nav-link">Awards →</a>
+  </header>
+
+  <main>
+    <section class="loading-banner" id="loading">
+      <span class="spinner"></span>
+      <span>Bekeken films laden uit Tana…</span>
+    </section>
+
+    <section class="section watched" id="bekeken" hidden>
+      <header class="section-header">
+        <span class="section-kicker">De collectie</span>
+        <h2>Bekeken</h2>
+        <p class="section-lede">Alle films die ik beoordeeld heb, van eensterretjes tot vijf sterren.</p>
+        <div class="watchlist-genres" id="watched-genres"></div>
+        <div class="filter-bar" id="filter-bar">
+          <label><span>Minimum sterren</span>
+            <select id="filter-stars">
+              <option value="0">alle</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5 sterren</option>
+            </select>
+          </label>
+          <label><span>Sorteer op</span>
+            <select id="filter-sort">
+              <option value="rating">beoordeling (hoog → laag)</option>
+              <option value="year-desc">jaar (nieuw → oud)</option>
+              <option value="year-asc">jaar (oud → nieuw)</option>
+              <option value="title">titel (A → Z)</option>
+            </select>
+          </label>
+          <label><span>Zoek in titels</span>
+            <input type="search" id="filter-search" placeholder="bijv. Hours" />
+          </label>
+        </div>
+      </header>
+      <div class="watched-grid" id="watched-grid"></div>
+      <p class="section-meta" id="watched-count"></p>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <p><a href="index.html">← alle films</a></p>
+      <p class="small"><span id="film-count"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/api-static.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/bekeken.js"></script>
+  </body>
+</html>

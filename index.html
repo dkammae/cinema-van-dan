@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta name="cinema-static" content="true" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinema van Dan — filmmagazine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-meta">
+        <span class="issue-label">Jaargang 1 — editie April</span>
+        <span class="issue-date" id="issue-date"></span>
+      </div>
+      <a href="index.html" class="wordmark-link"><h1 class="wordmark">Cinema van Dan</h1></a>
+      <p class="tagline">Een persoonlijk filmmagazine, rechtstreeks uit een Tana-kennisbank.</p>
+      <nav class="masthead-nav">
+        <a href="#watchlist">Watchlist</a>
+        <a href="#recensies">Recensies</a>
+        <a href="bekeken.html">Bekeken</a>
+        <a href="awards.html">Awards</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="loading-banner" id="loading">
+      <span class="spinner"></span>
+      <span>Films laden uit Tana…</span>
+    </section>
+
+    <section class="hero" id="hero" hidden></section>
+
+    <section class="section watchlist" id="watchlist" hidden>
+      <header class="section-header">
+        <span class="section-kicker">Nog te zien</span>
+        <h2>Watchlist</h2>
+        <p class="section-lede">Films die op de plank liggen — gedachten voor een regenachtige avond.</p>
+        <div class="watchlist-genres" id="watchlist-genres"></div>
+        <div class="filter-bar">
+          <label><span>Sorteer op</span>
+            <select id="watchlist-sort">
+              <option value="release">releasedatum</option>
+              <option value="year-asc">jaar (oud → nieuw)</option>
+              <option value="year-desc">jaar (nieuw → oud)</option>
+              <option value="disc">op disc eerst</option>
+              <option value="title">titel (A → Z)</option>
+            </select>
+          </label>
+          <label><span>Groepeer op</span>
+            <select id="watchlist-group">
+              <option value="disc" selected>op disc / nog niet</option>
+              <option value="none">geen groepering</option>
+              <option value="genre">categorie</option>
+            </select>
+          </label>
+        </div>
+      </header>
+      <div class="watchlist-strip" id="watchlist-strip"></div>
+    </section>
+
+    <section class="section reviews" id="recensies" hidden>
+      <header class="section-header">
+        <span class="section-kicker">De redactie schrijft</span>
+        <h2>Recensies</h2>
+        <p class="section-lede">Films waar ik iets over op papier zette — dit is het hart van het magazine.</p>
+      </header>
+      <div class="review-grid" id="review-grid"></div>
+      <p class="section-meta"><a href="bekeken.html" class="section-cta">Bekijk alle bekeken films →</a></p>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <p><strong>Cinema van Dan</strong> is een statische site die live uit Tana leest via de lokale API.</p>
+      <p class="small">Ontworpen als tijdschrift. Data ververst elke 60 seconden. <span id="film-count"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/api-static.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+  </body>
+</html>

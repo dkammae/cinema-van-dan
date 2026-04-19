@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta name="cinema-static" content="true" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awards — Cinema van Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="index.html" class="wordmark-link"><h1 class="wordmark">Cinema van Dan</h1></a>
+      <nav class="masthead-nav">
+        <a href="index.html">Watchlist</a>
+        <a href="bekeken.html">Bekeken</a>
+        <a href="awards.html" class="active">Awards</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="loading-banner" id="loading">
+      <span class="spinner"></span>
+      <span>Awards laden uit Tana…</span>
+    </section>
+
+    <section class="awards-page" id="awards-page" hidden>
+      <header class="awards-page-header">
+        <span class="section-kicker">Award seizoen</span>
+        <h2>Bekroningen</h2>
+        <p class="section-lede">Genomineerd of bekroond bij de grote ceremonies — gegroepeerd per jaar.</p>
+        <div class="awards-page-tabs" id="year-tabs"></div>
+      </header>
+      <div class="ceremony-grid" id="ceremony-grid"></div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <p><a href="index.html">← terug naar home</a></p>
+    </div>
+  </footer>
+
+  <script src="js/api-static.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/award-icons.js"></script>
+  <script src="js/awards.js"></script>
+  </body>
+</html>
