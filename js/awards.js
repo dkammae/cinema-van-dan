@@ -1,5 +1,5 @@
 (async function () {
-  const { fetchAwards, fetchList, backdropURL } = window.FilmAPI;
+  const { fetchAwards, fetchList, backdropURL, posterURL } = window.FilmAPI;
   const $ = sel => document.querySelector(sel);
 
   const loading = $('#loading');
@@ -87,7 +87,7 @@
         const cleanName = parseTitleYear(f.name).title;
         const yearLabel = parseTitleYear(f.name).year || '';
         const link = film ? `film.html?id=${encodeURIComponent(film.id)}` : '#';
-        const bg = backdropURL(cleanName, yearLabel);
+        const bg = posterURL(cleanName, yearLabel);
         return `
           <a class="poster-card ${isWinner ? 'winner' : ''} ${film ? '' : 'no-link'}" href="${link}">
             <div class="poster-image" style="background-image:url('${bg}')">
