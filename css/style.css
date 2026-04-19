@@ -1085,7 +1085,12 @@ body[data-static] .trivia-user-delete { display: none !important; }
   align-items: center;
   text-align: center;
   gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s;
 }
+.cast-card:hover { transform: translateY(-2px); }
+.cast-card:hover .cast-photo { border-color: var(--accent); }
 .cast-photo {
   width: 88px;
   height: 88px;

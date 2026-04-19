@@ -105,12 +105,14 @@
             const castInfo = (film.castAwards || []).find(ca => ca.name === c);
             const castMarker = castInfo?.awards?.length ? renderCastMarker(castInfo.awards) : '';
             return `
-            <li class="cast-card" data-name="${escapeAttr(c)}">
-              <div class="cast-photo">
-                <span class="cast-photo-placeholder">${escapeHTML(initials(c))}</span>
-                ${castMarker}
-              </div>
-              <span class="cast-name">${escapeHTML(c)}</span>
+            <li>
+              <a class="cast-card" href="cast.html?name=${encodeURIComponent(c)}" data-name="${escapeAttr(c)}">
+                <div class="cast-photo">
+                  <span class="cast-photo-placeholder">${escapeHTML(initials(c))}</span>
+                  ${castMarker}
+                </div>
+                <span class="cast-name">${escapeHTML(c)}</span>
+              </a>
             </li>
           `;}).join('')}</ul>
         </section>` : ''}

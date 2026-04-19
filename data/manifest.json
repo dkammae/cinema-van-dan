@@ -1,11 +1,12 @@
 {
-  "builtAt": "2026-04-19T21:15:18.808Z",
-  "ms": 1778,
+  "builtAt": "2026-04-19T21:34:24.427Z",
+  "ms": 1873,
   "stats": {
-    "wroteFiles": 98,
-    "copiedImages": 518,
+    "wroteFiles": 99,
+    "copiedImages": 519,
     "films": 470,
-    "directors": 330
+    "directors": 330,
+    "cast": 285
   },
   "publishUrl": "https://dkammae.github.io/cinema-van-dan"
 }

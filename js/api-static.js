@@ -84,6 +84,10 @@
       const name = decodeURIComponent(url.split('/api/director/')[1].split('?')[0]);
       return origFetch(`data/director/${normalizeName(name)}.json`);
     }
+    if (url.startsWith('/api/cast/')) {
+      const name = decodeURIComponent(url.split('/api/cast/')[1].split('?')[0]);
+      return origFetch(`data/cast/${normalizeName(name)}.json`);
+    }
     if (url.startsWith('/api/trivia/')) {
       const id = url.split('/api/trivia/')[1].split('?')[0].split('/')[0];
       return origFetch(`data/trivia/${encodeURIComponent(id)}.json`).catch(() => jsonResponse({ trivia: [], userTrivia: [] }));
