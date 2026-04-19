@@ -1,4 +1,14 @@
 (function () {
+  const isStatic = !!document.querySelector('meta[name="cinema-static"][content="true"]');
+
+  function staticSlug(str) {
+    return String(str || '').toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
+      .slice(0, 80);
+  }
+
   async function fetchList() {
     const res = await fetch('/api/films');
     if (!res.ok) throw new Error(`API error ${res.status}`);
@@ -34,15 +44,24 @@
 
   function proxyImage(url) {
     if (!url) return '';
+    if (isStatic) return url; // direct fetch on static — bypass server proxy
     return `/api/image?url=${encodeURIComponent(url)}`;
   }
 
   function posterURL(title, year) {
+    if (isStatic) {
+      const slug = `${staticSlug(title)}${year ? '-' + year : ''}`;
+      return `images/posters/${slug}.jpg`;
+    }
     const q = new URLSearchParams({ title, year: year || '' });
     return `/api/poster?${q}`;
   }
 
   function backdropURL(title, year) {
+    if (isStatic) {
+      const slug = `${staticSlug(title)}${year ? '-' + year : ''}-backdrop`;
+      return `images/backdrops/${slug}.jpg`;
+    }
     const q = new URLSearchParams({ title, year: year || '' });
     return `/api/backdrop?${q}`;
   }
